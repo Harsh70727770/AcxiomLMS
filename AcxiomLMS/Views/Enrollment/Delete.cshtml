@@ -1,0 +1,22 @@
+﻿@model AcxiomLMS.Models.Enrollment
+
+@{
+    ViewData["Title"] = "Delete Enrollment - Acxiom LMS";
+}
+@{
+    ViewData["BodyClass"] = "enrollment-body";
+}
+
+<h2>Delete Enrollment</h2>
+
+<div class="alert alert-warning mt-3">
+    Are you sure you want to remove
+    <strong>@Model.User.FullName</strong> from
+    <strong>@Model.Course.Title</strong>?
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Yes, Remove</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

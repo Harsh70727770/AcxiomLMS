@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AcxiomLMS.Models.Course>
+
+@{
+    ViewData["Title"] = "Courses";
+    ViewData["BodyClass"] = "course-body"; // important for background
+}
+
+<div class="course-wrapper">
+    <div class="glass-card">
+
+        <h2 class="mb-4 text-center fw-bold">Courses</h2>
+
+        <div class="text-end mb-3">
+            <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
+                + Add New Course
+            </a>
+        </div>
+
+        <table class="table table-hover table-bordered glass-table">
+            <thead class="table-light">
+                <tr>
+                    <th>Title</th>
+                    <th>Instructor</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Instructor</td>
+
+                        <td class="text-center">
+                            <a asp-action="Details" asp-route-id="@item.Id"
+                               class="btn btn-sm btn-info me-1 shadow-sm">
+                                Details
+                            </a>
+
+                            <a asp-action="Edit" asp-route-id="@item.Id"
+                               class="btn btn-sm btn-warning me-1 shadow-sm">
+                                Edit
+                            </a>
+
+                            <a asp-action="Delete" asp-route-id="@item.Id"
+                               class="btn btn-sm btn-danger shadow-sm">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

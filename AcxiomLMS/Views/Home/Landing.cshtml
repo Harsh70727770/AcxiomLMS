@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Welcome - Acxiom LMS";
+    ViewData["BodyClass"] = "landing-body";
+    ViewData["PageWrapperClass"] = "full-screen-wrapper";   // ADD THIS
+}
+
+
+<div class="landing-hero">
+    <div class="landing-overlay"></div>
+
+    <div class="landing-content text-center">
+        <h1 class="display-4 fw-bold mb-3">
+            Acxiom <span class="accent">LMS</span>
+        </h1>
+        <p class="lead mb-4">
+            Smart learning management system for students, teachers and admins.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 mb-4">
+            <a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-lg">
+                Login
+            </a>
+            <a asp-controller="Account" asp-action="Register" class="btn btn-outline-light btn-lg">
+                Register
+            </a>
+        </div>
+
+        <div class="landing-stats row g-3 justify-content-center mt-3">
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Courses</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Students</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Instructors</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

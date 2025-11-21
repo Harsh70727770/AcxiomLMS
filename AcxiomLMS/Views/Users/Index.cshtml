@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AcxiomLMS.Models.User>
+
+@{
+    ViewData["Title"] = "Users";
+    ViewData["BodyClass"] = "user-body";   // Background class
+}
+
+<div class="user-wrapper">
+
+    <h2 class="mb-3">Users List</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-light">
+            <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Username</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <td>@u.Id</td>
+                    <td>@u.FullName</td>
+                    <td>@u.Username</td>
+                    <td>@u.Role</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

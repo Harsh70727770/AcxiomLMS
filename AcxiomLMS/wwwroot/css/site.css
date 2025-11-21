@@ -1,0 +1,513 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* RESET default body margin so no white border */
+body {
+    margin: 0;
+    margin-bottom: 60px; /* for normal pages */
+}
+
+/* Navbar styling */
+.navbar.bg-dark {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Make landing page wrapper full width (removes white box) */
+.full-screen-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Remove bootstrap container defaults on landing page */
+body.landing-body .container,
+body.landing-body .main-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    background: transparent !important;
+}
+
+/* ?? Full-screen image background for landing page */
+body.landing-body {
+    margin: 0; /* override margin-bottom:60px */
+    margin-bottom: 0;
+    background: url("/images/landing-bg.png") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+
+/* ===== Acxiom LMS Landing Page ===== */
+
+/* (landing-section ab use nahi ho raha, par rehne de toh bhi issue nahi) */
+
+.landing-section {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.landing-hero {
+    position: relative;
+    min-height: calc(100vh - 70px); /* navbar height minus */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* soft glassmorphism overlay with moving blobs */
+.landing-overlay::before,
+.landing-overlay::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.55;
+    z-index: 0;
+}
+
+.landing-overlay::before {
+    top: -150px;
+    left: -150px;
+    background: radial-gradient(circle, #4b6cb7, transparent 60%);
+    animation: floatBlob1 22s linear infinite;
+}
+
+.landing-overlay::after {
+    bottom: -150px;
+    right: -150px;
+    background: radial-gradient(circle, #00c6ff, transparent 60%);
+    animation: floatBlob2 26s linear infinite;
+}
+
+@keyframes floatBlob1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(80px, 40px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes floatBlob2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-60px, -40px) scale(1.05);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.landing-content {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    padding: 2.5rem 2rem;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 1.5rem;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+    .landing-content .accent {
+        color: #00c6ff;
+    }
+
+.landing-stats .stat-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.stat-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Small screen adjustments */
+@media (max-width: 576px) {
+    .landing-content {
+        padding: 1.8rem 1.4rem;
+    }
+}
+
+/* ============================= */
+/* REGISTER PAGE BACKGROUND      */
+/* ============================= */
+
+body.register-body {
+    background: url("/images/register-bg.png") no-repeat center center fixed; /* ?? .png */
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.register-wrapper {
+    min-height: calc(100vh - 70px); /* navbar minus */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Glass card */
+.register-card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 1.3rem;
+    padding: 2rem;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    color: #000000;
+}
+
+    /* Labels white */
+    .register-card .form-label {
+        color: black;
+    }
+
+    /* Inputs */
+    .register-card .form-control {
+        background: rgba(255,255,255,0.25);
+        border: none;
+        color: #000000;
+    }
+
+        .register-card .form-control::placeholder {
+            color: #f1f1f1;
+        }
+
+    /* ============================= */
+    /* REGISTER DROPDOWN GLASS STYLE */
+    /* ============================= */
+
+    .register-card select.form-control {
+        background: rgba(255, 255, 255, 0.10) !important; /* light transparent */
+        border: none !important;
+        color: #ffffff !important;
+        border-radius: 8px;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
+        /* Options inside the dropdown list */
+        .register-card select.form-control option {
+            background: rgba(0, 0, 0, 0.60) !important; /* dark semi-transparent */
+            color: #ffffff !important;
+        }
+
+/* ============================= */
+/* LOGIN PAGE BACKGROUND         */
+/* ============================= */
+
+body.login-body {
+    background: url("/images/login-bg.png") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.login-wrapper {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Glassmorphism Login Card */
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 1.3rem;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    color: black;
+}
+
+    /* Input labels */
+    .login-card .form-label {
+        color: #000000;
+    }
+
+    /* Transparent Inputs */
+    .login-card .form-control {
+        background: rgba(255,255,255,0.18);
+        border: none;
+        color: #ffffff;
+        border-radius: 8px;
+    }
+
+        .login-card .form-control::placeholder {
+            color: #eeeeee;
+        }
+
+/* ============================= */
+/* DASHBOARD PAGE BACKGROUND     */
+/* ============================= */
+
+body.dashboard-body {
+    background: url("/images/dashboard-bg.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Wrapper to add spacing and center content nicely */
+.dashboard-wrapper {
+    min-height: calc(100vh - 70px); /* navbar height approx */
+    padding: 2rem;
+}
+
+/* Generic glass card style reused on dashboard */
+.glass-card {
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+}
+
+/* Make headings more readable */
+.dashboard-wrapper h2,
+.dashboard-wrapper h4,
+.dashboard-wrapper p {
+    color: #ffffff;
+}
+
+/* Buttons on glass cards */
+.dashboard-wrapper .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+}
+
+    .dashboard-wrapper .btn-outline-light:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+/* ============================= */
+/* COURSE PAGES BACKGROUND       */
+/* ============================= */
+
+body.course-body {
+    background: url("/images/course-bg.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: black !important; /* text black */
+}
+
+/* Glass card wrapper for form/table sections */
+.course-wrapper {
+    background: rgba(255, 255, 255, 0.20); /* lighter glass so black text visible */
+    backdrop-filter: blur(4px);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    color: #000000; /* black text */
+}
+
+    /* Input fields */
+    .course-wrapper .form-control {
+        background: rgba(255, 255, 255, 0.20);
+        border: none;
+        color: #000000; /* black text */
+    }
+
+        .course-wrapper .form-control::placeholder {
+            color: #555555; /* dark grey placeholder */
+        }
+
+/* Table wrapper for Index */
+.course-table {
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: 1rem;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+    color: #000000; /* black text in table */
+}
+
+    .course-table table tr {
+        background: rgba(255, 255, 255, 0.20);
+    }
+
+/* ===================================== */
+/* OVERRIDE GLASS CARD ON COURSE PAGES   */
+/* ===================================== */
+
+/* Course pages me glass-card ka text black */
+.course-wrapper .glass-card {
+    background: rgba(255, 255, 255, 0.75); /* thoda zyada white so black clear dikhe */
+    color: #000000 !important;
+}
+
+    /* Glass-card ke andar sab text black */
+    .course-wrapper .glass-card * {
+        color: #000000 !important;
+    }
+
+/* ============================= */
+/* USERS PAGE BACKGROUND         */
+/* ============================= */
+
+body.user-body {
+    background: url("/images/user-bg.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: black !important; /* readable text */
+}
+
+/* Glass wrapper for Users table */
+.user-wrapper {
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(6px);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    color: black;
+}
+
+    /* Table styling */
+    .user-wrapper table {
+        background: rgba(255, 255, 255, 0.20);
+        border-radius: 10px;
+    }
+
+        .user-wrapper table tr {
+            background: rgba(255, 255, 255, 0.20);
+        }
+
+/* ============================= */
+/* ENROLLMENT PAGE BACKGROUND    */
+/* ============================= */
+
+body.enrollment-body {
+    background: url("/images/enrollment-bg.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center page card */
+.enrollment-wrapper {
+    max-width: 900px;
+    margin: 3rem auto 6rem auto; /* ? space above + below so footer stays down */
+    padding: 2rem;
+}
+
+/* Transparent glass card */
+.enrollment-card {
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+    /* Maintain dark readable text */
+    .enrollment-card table td,
+    .enrollment-card table th {
+        color: black;
+    }
+
+/* ============================= */
+/*       FOR SEARCH BOX          */
+/* ============================= */
+.search-box {
+    width: 200px;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease;
+}
+
+    .search-box::placeholder {
+        color: #f1f1f1;
+    }
+
+    .search-box:focus {
+        background: rgba(255,255,255,0.3);
+        outline: none;
+    }

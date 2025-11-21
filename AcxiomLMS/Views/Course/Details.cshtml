@@ -1,0 +1,27 @@
+﻿@model AcxiomLMS.Models.Course
+
+@{
+    ViewData["Title"] = "Course Details";
+    ViewData["BodyClass"] = "course-body";
+}
+
+<div class="course-wrapper mt-4">
+    <div class="glass-card">
+        <h2 class="mb-4">Course Details</h2>
+
+        <div class="mb-3">
+            <h4 class="fw-bold">@Model.Title</h4>
+        </div>
+
+        <div class="mb-3">
+            <p><strong>Instructor:</strong> @Model.Instructor</p>
+        </div>
+
+        <div class="mb-3">
+            <p><strong>Description:</strong></p>
+            <p>@Model.Description</p>
+        </div>
+
+        <a asp-action="Index" class="btn btn-secondary mt-3 px-4">Back to List</a>
+    </div>
+</div>

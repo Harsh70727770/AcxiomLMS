@@ -1,0 +1,25 @@
+﻿@model AcxiomLMS.Models.Course
+
+@{
+    ViewData["Title"] = "Delete Course";
+    ViewData["BodyClass"] = "course-body";
+}
+
+<div class="course-wrapper mt-4">
+    <div class="glass-card">
+
+        <h2 class="mb-3 text-danger fw-bold">Delete Course</h2>
+
+        <div class="alert alert-warning">
+            Are you sure you want to delete <strong>@Model.Title</strong>?
+        </div>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <button type="submit" class="btn btn-danger px-4">Yes, Delete</button>
+            <a asp-action="Index" class="btn btn-secondary px-4 ms-2">Cancel</a>
+        </form>
+
+    </div>
+</div>

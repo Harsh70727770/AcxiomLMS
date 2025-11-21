@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Dashboard - Acxiom LMS";
+    ViewData["BodyClass"] = "dashboard-body";          // 👈 background class
+    ViewData["PageWrapperClass"] = "full-screen-wrapper";
+}
+
+<div class="dashboard-wrapper">
+    <div class="glass-card mb-3">
+        <h2 class="mb-2">Welcome to Acxiom LMS</h2>
+        <p class="mb-1">
+            Manage users, courses and enrollments from a single dashboard.
+        </p>
+        <p class="mb-0">
+            Logged in as:
+            <strong>@(ViewBag.Username ?? "admin")</strong>
+            (@(ViewBag.Role ?? "Admin"))
+        </p>
+    </div>
+
+    <div class="row g-3 dashboard-cards">
+        <div class="col-md-4">
+            <div class="glass-card h-100">
+                <h4>Courses</h4>
+                <p>View, create and manage courses.</p>
+                <a asp-controller="Course" asp-action="Index" class="btn btn-outline-light btn-sm">
+                    Go to Courses
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="glass-card h-100">
+                <h4>Users</h4>
+                <p>Check all registered users and roles.</p>
+                <a asp-controller="Users" asp-action="Index" class="btn btn-outline-light btn-sm">
+                    View Users
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="glass-card h-100">
+                <h4>Enrollments</h4>
+                <p>Assign courses to students.</p>
+                <a asp-controller="Enrollment" asp-action="Index" class="btn btn-outline-light btn-sm">
+                    Manage Enrollments
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

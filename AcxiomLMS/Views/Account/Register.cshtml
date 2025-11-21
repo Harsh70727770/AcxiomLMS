@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Register - Acxiom LMS";
+    ViewData["BodyClass"] = "register-body";          // 👈 important
+    ViewData["PageWrapperClass"] = "full-screen-wrapper";
+}
+
+<div class="register-wrapper">
+    <div class="register-card">
+        <h2 class="text-center mb-4">Register</h2>
+
+        <form asp-action="Register" method="post">
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input class="form-control" name="FullName" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input class="form-control" name="Username" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input class="form-control" type="password" name="Password" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Role</label>
+                <select name="Role" class="form-control">
+                    <option>Student</option>
+                    <option>Teacher</option>
+                    <option>Admin</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+    </div>
+</div>
